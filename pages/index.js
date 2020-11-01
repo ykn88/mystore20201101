@@ -29,16 +29,7 @@ function Home({products}) {
   )
 }
 
-// export async function getStaticProps() {
-//   const data = await (await fetch(`${baseUrl}/api/products`)).json()
-//   return {
-//     props: {
-//       products: data
-//     }
-//   }
-// }
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await (await fetch(`${baseUrl}/api/products`)).json()
   return {
     props: {
@@ -46,5 +37,14 @@ export async function getServerSideProps() {
     }
   }
 }
+
+// export async function getServerSideProps() {
+//   const data = await (await fetch(`${baseUrl}/api/products`)).json()
+//   return {
+//     props: {
+//       products: data
+//     }
+//   }
+// }
 
 export default Home
